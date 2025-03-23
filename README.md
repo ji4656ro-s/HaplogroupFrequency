@@ -7,14 +7,19 @@ Haplogroup Frequency Explorer is an interactive Streamlit application that enabl
 - Generate a summary report highlighting the percentage of each haplogroup by country.
 
 ## Usage
-1. Place Your Data Files
+### Before running the app
+#### Generating the files to run the app
+1. Use the Convert_to_CSV_Clean.py script to convert the excel metadata file from the AADR database (AADR_Annotation.xlsx) to CSV format and clean it from missing values.
+2. Use the CSV_only_with_relevant_columns.py to generate a CSV file only with relevant columns (country and haplogroup), use as input AADR_Annotation_Cleaned.csv (output from step 1 above).
+3. Use the Haplogroup_incidence_per_country.py script to generate a file contaning the countries, haplogroup, and incidences. Use as input Final_Filtered_AADR_Annotation.csv (from step 2 above).
+#### Place Your Data Files
   - Haplogroup_Frequency_Per_Country.csv
   - ne_110m_admin_0_countries.shp plus all associated shapefile components (.shx, .dbf, .prj) in the same directory as the app or update the file paths in the script.
-  - Run the App
+### Running the App
     ```bash
     streamlit run app.py
     ```
-  - Interact with the UI
+  - Interact with the app
       - Select a haplogroup from the dropdown.
       - Choose "View Heatmap" to see the choropleth map.
       - Or select "View Summary Report" for a detailed table.
